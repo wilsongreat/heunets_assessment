@@ -3,7 +3,7 @@ import 'package:flutter_hicons/flutter_hicons.dart';
 import 'package:heunets_assessment_app/features/dashboard/data/model/dashboard_model.dart';
 import 'package:heunets_assessment_app/features/dashboard/presentation/widgets/dashboard_view.dart';
 import 'package:heunets_assessment_app/features/home/presentation/pages/home_page.dart';
-import 'package:heunets_assessment_app/features/job/presentation/pages/Applied_jobs_page.dart';
+import 'package:heunets_assessment_app/features/job/presentation/pages/applied_jobs_page.dart';
 import 'package:heunets_assessment_app/features/job/presentation/pages/post_job_page.dart';
 import 'package:heunets_assessment_app/features/job/presentation/pages/profile_page.dart';
 

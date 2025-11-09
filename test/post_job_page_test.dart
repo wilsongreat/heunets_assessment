@@ -5,12 +5,7 @@ import 'package:heunets_assessment_app/features/job/presentation/pages/post_job_
 import 'package:heunets_assessment_app/features/home/presentation/controller/home_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PostJobPageStateHelper {
-  // ignore: avoid_redundant_argument_values
-  static void selectJobType(WidgetTester tester, String jobType) {
-    final postJobPageState = tester.state(find.byType(PostJobPage));
-  }
-}
+
 
 void main() {
   testWidgets('PostJobPage posts a job successfully', (WidgetTester tester) async {
@@ -36,7 +31,6 @@ void main() {
     await tester.enterText(textFields.at(1), 'Test Company');
     await tester.enterText(textFields.at(2), 'Test City');
     // Select job type by setting the state directly
-    PostJobPageStateHelper.selectJobType(tester, 'Full-time');
     await tester.pumpAndSettle();
     await tester.enterText(textFields.at(3), '100k - 200k');
     await tester.enterText(textFields.at(4), 'Test job description');
