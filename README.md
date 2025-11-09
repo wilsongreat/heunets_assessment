@@ -2,6 +2,20 @@
 
 A comprehensive job search and application management Flutter app built with clean architecture principles.
 
+# Heunets Assessment Video-  showing app features
+https://drive.google.com/drive/folders/1q39wyCUAOj8hgYUZED7mnZ3bLKX2xzYS?usp=sharing
+
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 30 31" src="https://github.com/user-attachments/assets/fd952dca-2dee-496a-be71-09fa653b7281" />
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 31 08" src="https://github.com/user-attachments/assets/810a1bb5-ee32-4fe9-8bd6-90cd6d4d2ff6" />
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 31 31" src="https://github.com/user-attachments/assets/19abb214-7650-40a2-9a23-3dd8aa1a4eb9" />
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 32 35" src="https://github.com/user-attachments/assets/11710bda-d90c-412d-b6c4-5a64f6652b0e" />
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 32 46" src="https://github.com/user-attachments/assets/a3289b6f-6b45-4b4e-aec6-115967090567" />
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 33 04" src="https://github.com/user-attachments/assets/8321023e-cac6-4b35-bfda-44d1cc886b70" />
+
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 33 16" src="https://github.com/user-attachments/assets/1632bb0b-9902-4338-821d-44dbf8d9309b" />
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 33 27" src="https://github.com/user-attachments/assets/b9cbbb6f-e2e5-4272-a96c-ac96cea0c6e0" />
+<img width="387" height="828" alt="Screenshot 2025-11-09 at 21 34 10" src="https://github.com/user-attachments/assets/bddf0b1e-8fad-46bc-b1eb-ab1afb83a0a6" />
+
 ## 📱 Features
 
 - **Job Search**: Browse and search through available job listings
