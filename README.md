@@ -84,7 +84,7 @@ dev_dependencies:
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/wilsongreat/heunets_assessment.git>
    cd heunets_assessment_app
    ```
 
@@ -107,6 +107,51 @@ flutter test test/post_job_page_test
 
 
 ```
+
+## 🔄 CI/CD Pipeline
+
+This project uses **GitHub Actions** for continuous integration and deployment. The CI/CD pipeline is configured to:
+
+### Pipeline Configuration
+
+The CI/CD pipeline is defined in `.github/workflows/ci.yml` and includes the following stages:
+
+#### Triggers
+- **Push to main branch**: Automatically runs on every push to the `main` branch
+- **Pull Requests**: Runs on pull requests targeting the `main` branch
+
+#### Jobs and Steps
+
+##### Test Job (Ubuntu Latest)
+1. **Checkout Code**: Uses `actions/checkout@v4` to fetch the repository code
+2. **Setup Flutter**: Uses `subosito/flutter-action@v2` with Flutter version `3.8.1`
+3. **Get Dependencies**: Runs `flutter pub get` to install all project dependencies
+4. **Run Lint**: Executes `flutter analyze` to check code quality and style
+5. **Run Tests**: Runs `flutter test` to execute the test suite
+
+### Pipeline Features
+
+- **Automated Testing**: Ensures all tests pass before code is merged
+- **Code Quality Checks**: Enforces Dart/Flutter linting rules
+- **Dependency Management**: Verifies all packages are properly resolved
+- **Cross-Platform Compatibility**: Runs on Ubuntu, ensuring Linux compatibility
+
+### Local Development
+To test the pipeline locally before pushing:
+```bash
+# Run linting
+flutter analyze
+
+# Run tests
+flutter test
+```
+
+### Contributing with CI/CD
+When contributing to this project:
+1. Ensure all tests pass locally
+2. Fix any linting issues
+3. The CI pipeline will automatically validate your changes
+4. Only code that passes all checks will be merged
 
 ## 🎨 Design Decisions
 
