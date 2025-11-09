@@ -16,7 +16,7 @@ class JobCardWidget extends StatelessWidget {
     return  GestureDetector(
       onTap: callback,
       child: Container(
-        height: fullHeight(context) * .17,
+        height: fullHeight(context) * .15,
         width: fullWidth(context),
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         decoration: BoxDecoration(
@@ -79,13 +79,9 @@ class JobCardWidget extends StatelessWidget {
                   Flexible(
                     child: Row(
                       children: [
-                        Expanded(
-                          child: jobInfoChip(Hicons.workLightOutline, job.location),
-                        ),
+                        jobInfoChip(Hicons.workLightOutline, job.location),
                         Gap(6),
-                        Expanded(
-                          child: jobInfoChip(Hicons.workLightOutline, job.jobType),
-                        ),
+                        jobInfoChip(Hicons.workLightOutline, job.jobType),
                       ],
                     ),
                   ),

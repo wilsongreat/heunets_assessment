@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/features/home/presentation/controller/home_controller.dart';
 import 'package:heunets_assessment_app/features/job/data/model/job_model.dart';
 
@@ -27,6 +28,7 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
   final _coverLetterController = TextEditingController();
 
   String? _selectedFileName;
+  bool _showSuccess = false;
 
   @override
   void dispose() {
@@ -70,17 +72,15 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
         resumeFileName: _selectedFileName,
       );
 
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   SnackBar(
-      //     content: Text('Application submitted successfully!'),
-      //     backgroundColor: Colors.green,
-      //     duration: Duration(seconds: 2),
-      //   ),
-      // );
-
-      widget.onSubmit?.call();
-      Navigator.of(context).pop();
+      setState(() {
+        _showSuccess = true;
+      });
     }
+  }
+
+  void _closeDialog() {
+    widget.onSubmit?.call();
+    Navigator.of(context).pop();
   }
 
   @override
@@ -94,10 +94,15 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(20.r),
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Header with close button
+        child: _showSuccess ? _buildSuccessWidget() : _buildFormWidget(),
+      ),
+    );
+  }
+
+  Widget _buildFormWidget() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
             Padding(
               padding: EdgeInsets.all(20.r),
               child: Row(
@@ -140,8 +145,6 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
                 ],
               ),
             ),
-
-            // Form content
             Flexible(
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -163,7 +166,6 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
                       ),
                       SizedBox(height: 16.h),
 
-                      // Email Field
                       _buildTextField(
                         controller: _emailController,
                         hintText: 'Email',
@@ -181,7 +183,6 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
                       ),
                       SizedBox(height: 16.h),
 
-                      // Phone Number Field
                       _buildTextField(
                         controller: _phoneController,
                         hintText: 'Phone Number',
@@ -195,7 +196,6 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
                       ),
                       SizedBox(height: 16.h),
 
-                      // Cover Letter Field
                       _buildTextField(
                         controller: _coverLetterController,
                         hintText: 'Cover Letter (Optional)',
@@ -204,11 +204,9 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
                       ),
                       SizedBox(height: 16.h),
 
-                      // File Upload Section
                       _buildFileUploadSection(),
                       SizedBox(height: 24.h),
 
-                      // Submit Button
                       SizedBox(
                         width: double.infinity,
                         height: 50.h,
@@ -238,10 +236,86 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
               ),
             ),
           ],
-        ),
-      ),
-    );
+        );
   }
+
+ Widget _buildSuccessWidget() {
+   return Padding(
+     padding: EdgeInsets.all(20.r),
+     child: Stack(
+       children: [
+         Column(
+           mainAxisSize: MainAxisSize.min,
+           children: [
+             SizedBox(height: 20.h),
+             Icon(
+               Icons.check_circle,
+               color: AppColors.primaryColor,
+               size: 60.sp,
+             ),
+             SizedBox(height: 16.h),
+             Text(
+               'Application Submitted Successfully!',
+               style: TextStyle(
+                 fontSize: 20.sp,
+                 fontWeight: FontWeight.w600,
+                 color: Colors.black,
+               ),
+               textAlign: TextAlign.center,
+             ),
+             SizedBox(height: 8.h),
+             Text(
+               'Your application for ${widget.job.title} has been submitted. We\'ll get back to you soon.',
+               style: TextStyle(
+                 fontSize: 14.sp,
+                 color: Colors.grey[600],
+               ),
+               textAlign: TextAlign.center,
+             ),
+             SizedBox(height: 24.h),
+             SizedBox(
+               width: double.infinity,
+               height: 50.h,
+               child: ElevatedButton(
+                 onPressed: _closeDialog,
+                 style: ElevatedButton.styleFrom(
+                   backgroundColor: AppColors.primaryColor,
+                   shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(12.r),
+                   ),
+                   elevation: 0,
+                 ),
+                 child: Text(
+                   'Close',
+                   style: TextStyle(
+                     fontSize: 16.sp,
+                     fontWeight: FontWeight.w600,
+                     color: Colors.white,
+                   ),
+                 ),
+               ),
+             ),
+           ],
+         ),
+         Positioned(
+           top: 0,
+           right: 0,
+           child: GestureDetector(
+             onTap: _closeDialog,
+             child: Container(
+               padding: EdgeInsets.all(8.r),
+               child: Icon(
+                 Icons.close,
+                 color: Colors.grey[600],
+                 size: 24.sp,
+               ),
+             ),
+           ),
+         ),
+       ],
+     ),
+   );
+ }
 
   Widget _buildTextField({
     required TextEditingController controller,

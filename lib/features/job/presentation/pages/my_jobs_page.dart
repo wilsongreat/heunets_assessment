@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore: avoid_redundant_argument_values
 
 import 'package:flutter/material.dart' ;
 import 'package:flutter_screenutil/flutter_screenutil.dart';

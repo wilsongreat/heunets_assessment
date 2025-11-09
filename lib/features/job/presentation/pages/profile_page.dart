@@ -31,6 +31,16 @@ class _ProfilePageState extends State<ProfilePage> {
     jobTitleController.text = "Frontend Developer";
   }
 
+  void _saveProfile() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('Saved profile details'),
+        backgroundColor: AppColors.primaryColor,
+        duration: const Duration(seconds: 2),
+      ),
+    );
+  }
+
   @override
   void initState() {
     initializeControllers();
@@ -82,7 +92,7 @@ class _ProfilePageState extends State<ProfilePage> {
             
                       CustomTextField(controller: jobTitleController ,label: 'Job Title',iconData: Hicons.bag2LightOutline,),
                       Gap(20),
-                      CustomBtn(onTap: (){}, text: "Save Changes")
+                      CustomBtn(onTap: _saveProfile, text: "Save Changes")
             
                     ],
                   ),
