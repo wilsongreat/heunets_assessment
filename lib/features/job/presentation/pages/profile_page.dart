@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/core/utils/gap.dart';
 import 'package:heunets_assessment_app/core/utils/screen_utils.dart';
-import 'package:heunets_assessment_app/core/widgets/container_wrapper.dart';
 import 'package:heunets_assessment_app/core/widgets/custom_textfield.dart';
 import 'package:heunets_assessment_app/core/widgets/custon_btn.dart';
 
@@ -65,8 +64,25 @@ class _ProfilePageState extends State<ProfilePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Gap(20),
-               Wrapper(
-                  child: Column(
+               Container(
+                 width: double.infinity,
+                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                 decoration: BoxDecoration(
+                   color: AppColors.white,
+                   borderRadius: BorderRadius.circular(20),
+                   border: Border.all(
+                     color: AppColors.grey.withValues(alpha: .2),
+                     width: 1,
+                   ),
+                   boxShadow: [
+                     BoxShadow(
+                       color: AppColors.black.withValues(alpha: 0.03),
+                       spreadRadius: 4,
+                       blurRadius: 10,
+                     ),
+                   ],
+                 ),
+                 child: Column(
                     children: [
                       CircleAvatar(
                         radius: 45,
@@ -98,19 +114,38 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
                 Gap(20),
-                Wrapper(child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Account Settings', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                    Gap(15),
-                    profileActionChip(label: 'Change Password'),
-                    Gap(10),
-                    profileActionChip(label: 'Notification Settings'),
-                    Gap(10),
-                    profileActionChip(label: 'Delete Account',color: AppColors.red),
-                    Gap(10),
-                  ],
-                ))
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: AppColors.grey.withValues(alpha: .2),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.black.withValues(alpha: 0.03),
+                        spreadRadius: 4,
+                        blurRadius: 10,
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Account Settings', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
+                      Gap(15),
+                      profileActionChip(label: 'Change Password'),
+                      Gap(10),
+                      profileActionChip(label: 'Notification Settings'),
+                      Gap(10),
+                      profileActionChip(label: 'Delete Account',color: AppColors.red),
+                      Gap(10),
+                    ],
+                  ),
+                )
             
               ],
             ),

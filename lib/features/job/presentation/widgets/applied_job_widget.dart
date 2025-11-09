@@ -3,7 +3,6 @@ import 'package:flutter_hicons/flutter_hicons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/core/utils/gap.dart';
-import 'package:heunets_assessment_app/core/widgets/container_wrapper.dart';
 import 'package:heunets_assessment_app/features/job/data/model/job_application_model.dart';
 
 class AppliedJobWidget extends StatelessWidget {
@@ -14,7 +13,24 @@ class AppliedJobWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Wrapper(
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: AppColors.grey.withValues(alpha: .2),
+              width: 1,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.black.withValues(alpha: 0.03),
+                spreadRadius: 4,
+                blurRadius: 10,
+              ),
+            ],
+          ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

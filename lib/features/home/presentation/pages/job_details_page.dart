@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/core/utils/gap.dart';
 import 'package:heunets_assessment_app/core/utils/screen_utils.dart';
-import 'package:heunets_assessment_app/core/widgets/Container_wrapper.dart';
 import 'package:heunets_assessment_app/core/widgets/custon_btn.dart';
 import 'package:heunets_assessment_app/features/home/presentation/controller/home_controller.dart';
 import 'package:heunets_assessment_app/features/home/presentation/widgets/job_application_dialog.dart';
@@ -21,7 +20,6 @@ class JobDetailsPage extends StatefulWidget {
 }
 
 class _JobDetailsPageState extends State<JobDetailsPage> {
-
   void _showApplicationDialog() {
     final homeController = context.read<HomeController>();
     showDialog(
@@ -30,7 +28,7 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
       builder: (BuildContext context) {
         return JobApplicationDialog(
           job: widget.jobInfo,
-          homeController:homeController ,
+          homeController: homeController,
           onSubmit: () {
             debugPrint('Application submitted!');
           },
@@ -47,10 +45,7 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
         foregroundColor: AppColors.white,
         automaticallyImplyLeading: true,
         backgroundColor: AppColors.primaryColor,
-        title: Text(
-          'Job Details',
-          style: TextStyle(color: AppColors.white),
-        ),
+        title: Text('Job Details', style: TextStyle(color: AppColors.white)),
         actions: [Icon(Icons.share_outlined)],
         actionsPadding: EdgeInsets.only(right: 10),
       ),
@@ -60,7 +55,27 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
           child: Column(
             children: [
               Gap(20),
-              Wrapper(
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 15,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.grey.withValues(alpha: .2),
+                    width: 1,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: .03),
+                      spreadRadius: 4,
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -107,10 +122,9 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
                                 ),
                               ),
                               Gap(10),
-
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Gap(10),
@@ -126,7 +140,8 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
                         JobInfoChip(
                           icon: Hicons.workLightOutline,
                           info: widget.jobInfo.jobType,
-                        ), Gap(10),
+                        ),
+                        Gap(10),
                         JobInfoChip(
                           icon: Hicons.timeCircle1LightOutline,
                           info: widget.jobInfo.timePosted,
@@ -136,7 +151,10 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
                     Gap(10),
                     Gap(10),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10,vertical: 4),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 4,
+                      ),
                       decoration: BoxDecoration(
                         color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(10),
@@ -151,54 +169,165 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
                       ),
                     ),
                     Gap(10),
-                    CustomBtn(onTap: (){
-                      _showApplicationDialog();
-                    }, text: 'Apply Now')
+                    CustomBtn(
+                      onTap: () {
+                        _showApplicationDialog();
+                      },
+                      text: 'Apply Now',
+                    ),
                   ],
                 ),
               ),
               Gap(15),
-              Wrapper(child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                Text('Account Settings', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                  Gap(10),
-                  Text(widget.jobInfo.aboutRole, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16,color: AppColors.grey ),),
-              ],)),
-              Gap(15),
-              Wrapper(child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                Text('Requirements', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                Gap(10),
-
-                  ...widget.jobInfo.requirements.map((e) =>SizedBox(
-                    width: fullWidth(context),
-                    child: Row(
-                      children: [
-                        CircleAvatar(radius: 3,backgroundColor: AppColors.primaryColor,),
-                        Gap(10),
-                        SizedBox(width: fullWidth(context) * .8,child: Text(e, style: TextStyle(fontSize: 13.sp,color: AppColors.grey, fontWeight: FontWeight.w400),overflow: TextOverflow.ellipsis,)),
-                      ],
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 15,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.grey.withValues(alpha: .2),
+                    width: 1,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: .03),
+                      spreadRadius: 4,
+                      blurRadius: 10,
                     ),
-                  ))
-
-
-              ],)),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Account Settings',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Gap(10),
+                    Text(
+                      widget.jobInfo.aboutRole,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        color: AppColors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Gap(15),
-              Wrapper(child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                Text('Benefits', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                  Wrap(
-                    alignment: WrapAlignment.spaceBetween,
-                    runSpacing: 10.0,
-                    spacing: 5,
-                    children: widget.jobInfo.benefits.map((e) => JobInfoChip( info: e),).toList()
-                  )
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 15,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.grey.withValues(alpha: .2),
+                    width: 1,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.03),
+                      spreadRadius: 4,
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Requirements',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Gap(10),
 
-              ],))
-
+                    ...widget.jobInfo.requirements.map(
+                      (e) => SizedBox(
+                        width: fullWidth(context),
+                        child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 3,
+                              backgroundColor: AppColors.primaryColor,
+                            ),
+                            Gap(10),
+                            SizedBox(
+                              width: fullWidth(context) * .8,
+                              child: Text(
+                                e,
+                                style: TextStyle(
+                                  fontSize: 13.sp,
+                                  color: AppColors.grey,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Gap(15),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 15,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.grey.withValues(alpha: .2),
+                    width: 1,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.03),
+                      spreadRadius: 4,
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Benefits',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Wrap(
+                      alignment: WrapAlignment.spaceBetween,
+                      runSpacing: 10.0,
+                      spacing: 5,
+                      children: widget.jobInfo.benefits
+                          .map((e) => JobInfoChip(info: e))
+                          .toList(),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
