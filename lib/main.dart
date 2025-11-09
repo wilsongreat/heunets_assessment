@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:heunets_assessment_app/app.dart';
-import 'package:heunets_assessment_app/features/dashboard/presentation/views/dashboard_screen.dart';
 import 'core/config/app/di_container.dart' as dicontainer;
 
 void main() async {

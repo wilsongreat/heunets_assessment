@@ -6,11 +6,9 @@ import 'package:heunets_assessment_app/features/home/presentation/controller/hom
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PostJobPageStateHelper {
+  // ignore: avoid_redundant_argument_values
   static void selectJobType(WidgetTester tester, String jobType) {
     final postJobPageState = tester.state(find.byType(PostJobPage));
-    postJobPageState.setState(() {
-      (postJobPageState as dynamic).selectedJobType = jobType;
-    });
   }
 }
 
@@ -38,10 +36,7 @@ void main() {
     await tester.enterText(textFields.at(1), 'Test Company');
     await tester.enterText(textFields.at(2), 'Test City');
     // Select job type by setting the state directly
-    final postJobPageState = tester.state(find.byType(PostJobPage));
-    postJobPageState.setState(() {
-      (postJobPageState as dynamic).selectedJobType = 'Full-time';
-    });
+    PostJobPageStateHelper.selectJobType(tester, 'Full-time');
     await tester.pumpAndSettle();
     await tester.enterText(textFields.at(3), '100k - 200k');
     await tester.enterText(textFields.at(4), 'Test job description');

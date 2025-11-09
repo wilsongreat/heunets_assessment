@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' ;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/core/utils/gap.dart';
@@ -33,12 +33,12 @@ class _MyJobsPageState extends State<MyJobsPage> {
         .toList();
 
     return Scaffold(
-      backgroundColor: AppColors.White,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
         automaticallyImplyLeading: true,
         backgroundColor: AppColors.primaryColor,
         centerTitle: true,
-        title: Text('My Applications', style: TextStyle(color: AppColors.White),),
+        title: Text('My Applications', style: TextStyle(color: AppColors.white),),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -91,7 +91,7 @@ class _MyJobsPageState extends State<MyJobsPage> {
         height:43,
         width: 100.w,
         decoration:BoxDecoration(
-            color: tabLabel == label ?  AppColors.White : null,
+            color: tabLabel == label ?  AppColors.white : null,
             borderRadius: BorderRadius.circular(10)
         ),
         alignment: Alignment.center,

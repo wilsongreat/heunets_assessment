@@ -20,7 +20,7 @@ class JobCardWidget extends StatelessWidget {
         width: fullWidth(context),
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         decoration: BoxDecoration(
-          color: AppColors.White,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: AppColors.grey.withValues(alpha: .2),
@@ -48,7 +48,7 @@ class JobCardWidget extends StatelessWidget {
               child: Text(
                 job.companyInitial,
                 style: TextStyle(
-                  color: AppColors.White,
+                  color: AppColors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.w700,
                 ),

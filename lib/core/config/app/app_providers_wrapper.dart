@@ -5,7 +5,7 @@ import 'di_container.dart';
 import 'package:provider/provider.dart';
 
 class AppProvidersWrapper extends StatelessWidget {
-  const AppProvidersWrapper({Key? key, required this.child}) : super(key: key);
+  const AppProvidersWrapper({super.key, required this.child});
 
   final Widget child;
 

@@ -4,7 +4,7 @@ import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/core/utils/gap.dart';
 import 'package:heunets_assessment_app/core/utils/screen_utils.dart';
 import 'package:heunets_assessment_app/features/home/presentation/controller/home_controller.dart';
-import 'package:heunets_assessment_app/features/home/presentation/pages/jobe_details_page.dart';
+import 'package:heunets_assessment_app/features/home/presentation/pages/job_details_page.dart';
 import 'package:heunets_assessment_app/features/home/presentation/widgets/search_input.dart';
 import 'package:heunets_assessment_app/features/job/presentation/widgets/job_card_widget.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.White,
+      backgroundColor: AppColors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     'Find Your Dream Job',
                     style: TextStyle(
-                      color: AppColors.White,
+                      color: AppColors.white,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),

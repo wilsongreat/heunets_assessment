@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:heunets_assessment_app/features/home/presentation/controller/home_controller.dart';
 import 'package:heunets_assessment_app/features/job/data/model/job_model.dart';
-import 'package:provider/provider.dart';
 
 class JobApplicationDialog extends StatefulWidget {
   final Job job;
@@ -11,10 +10,10 @@ class JobApplicationDialog extends StatefulWidget {
   final HomeController homeController;
 
   const JobApplicationDialog({
-    Key? key,
+    super.key,
     required this.job,
     this.onSubmit, required this.homeController,
-  }) : super(key: key);
+  });
 
   @override
   State<JobApplicationDialog> createState() => _JobApplicationDialogState();
@@ -28,7 +27,6 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
   final _coverLetterController = TextEditingController();
 
   String? _selectedFileName;
-  PlatformFile? _selectedFile;
 
   @override
   void dispose() {
@@ -40,6 +38,8 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
   }
 
   Future<void> _pickFile() async {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+
     try {
       FilePickerResult? result = await FilePicker.platform.pickFiles(
         type: FileType.custom,
@@ -48,13 +48,11 @@ class _JobApplicationDialogState extends State<JobApplicationDialog> {
 
       if (result != null) {
         setState(() {
-          _selectedFile = result.files.first;
           _selectedFileName = result.files.first.name;
         });
       }
     } catch (e) {
-      // Handle error
-      ScaffoldMessenger.of(context).showSnackBar(
+      scaffoldMessenger.showSnackBar(
         SnackBar(content: Text('Error picking file: $e')),
       );
     }

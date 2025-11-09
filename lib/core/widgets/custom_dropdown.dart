@@ -17,7 +17,7 @@ class CustomDropdown<T> extends StatefulWidget {
   final double? fontSize;
 
   const CustomDropdown({
-    Key? key,
+    super.key,
     required this.label,
     required this.hintText,
     required this.items,
@@ -30,7 +30,7 @@ class CustomDropdown<T> extends StatefulWidget {
     this.enabled = true,
     this.labelColor,
     this.fontSize,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomDropdown<T>> createState() => _CustomDropdownState<T>();

@@ -96,12 +96,12 @@ class _PostJobPageState extends State<PostJobPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.White,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
         automaticallyImplyLeading: true,
         backgroundColor: AppColors.primaryColor,
         centerTitle: true,
-        title: Text('Post a New Job', style: TextStyle(color: AppColors.White)),
+        title: Text('Post a New Job', style: TextStyle(color: AppColors.white)),
       ),
       body: SafeArea(
         child: Padding(

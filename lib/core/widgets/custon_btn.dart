@@ -16,7 +16,7 @@ class CustomBtn extends StatelessWidget {
         width: fullWidth(context),
         decoration: BoxDecoration(color: AppColors.primaryColor, borderRadius: BorderRadius.circular(10)),
         alignment: Alignment.center,
-        child: Text(text,style: TextStyle(color: AppColors.White,fontWeight: FontWeight.w600),),
+        child: Text(text,style: TextStyle(color: AppColors.white,fontWeight: FontWeight.w600),),
       ),
     );
   }

@@ -286,13 +286,8 @@ class HomeController extends ChangeNotifier {
 
     notifyListeners();
 
-    print('Application submitted:');
-    print('Job: ${job.title} at ${job.company}');
-    print('Applicant: $applicantName');
-    print('Email: $applicantEmail');
-    print('Phone: $applicantPhone');
     if (resumeFileName != null) {
-      print('Resume: $resumeFileName');
+      debugPrint('Resume: $resumeFileName');
     }
   }
 

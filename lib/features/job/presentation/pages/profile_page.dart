@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/core/utils/gap.dart';
 import 'package:heunets_assessment_app/core/utils/screen_utils.dart';
-import 'package:heunets_assessment_app/core/widgets/Container_wrapper.dart';
+import 'package:heunets_assessment_app/core/widgets/container_wrapper.dart';
 import 'package:heunets_assessment_app/core/widgets/custom_textfield.dart';
 import 'package:heunets_assessment_app/core/widgets/custon_btn.dart';
 
@@ -39,13 +39,13 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.White,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
         automaticallyImplyLeading: true,
         backgroundColor: AppColors.primaryColor,
         centerTitle: true,
 
-        title: Text('Profile', style: TextStyle(color: AppColors.White),),
+        title: Text('Profile', style: TextStyle(color: AppColors.white),),
       ),
       body: SafeArea(
         child: Padding(
@@ -61,7 +61,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       CircleAvatar(
                         radius: 45,
                         backgroundColor: AppColors.primaryColor,
-                        child: Text('JD', style: TextStyle(color: AppColors.White, fontSize: 30),),
+                        child: Text('JD', style: TextStyle(color: AppColors.white, fontSize: 30),),
                       ),
                       Gap(10),
                       Text('John Doe', style: TextStyle(color: AppColors.black, fontSize: 16.sp, fontWeight: FontWeight.w500),),

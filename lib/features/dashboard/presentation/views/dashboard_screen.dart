@@ -8,7 +8,7 @@ import 'package:heunets_assessment_app/features/job/presentation/pages/post_job_
 import 'package:heunets_assessment_app/features/job/presentation/pages/profile_page.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key, this.selectedIndex = 0}) : super(key: key);
+  const DashboardScreen({super.key, this.selectedIndex = 0});
 
   final int selectedIndex;
 

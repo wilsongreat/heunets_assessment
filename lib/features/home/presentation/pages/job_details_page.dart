@@ -32,7 +32,7 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
           job: widget.jobInfo,
           homeController:homeController ,
           onSubmit: () {
-            print('Application submitted!');
+            debugPrint('Application submitted!');
           },
         );
       },
@@ -42,14 +42,14 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.White,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
-        foregroundColor: AppColors.White,
+        foregroundColor: AppColors.white,
         automaticallyImplyLeading: true,
         backgroundColor: AppColors.primaryColor,
         title: Text(
           'Job Details',
-          style: TextStyle(color: AppColors.White),
+          style: TextStyle(color: AppColors.white),
         ),
         actions: [Icon(Icons.share_outlined)],
         actionsPadding: EdgeInsets.only(right: 10),
@@ -78,7 +78,7 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
                           child: Text(
                             widget.jobInfo.companyInitial,
                             style: TextStyle(
-                              color: AppColors.White,
+                              color: AppColors.white,
                               fontSize: 30,
                               fontWeight: FontWeight.w700,
                             ),
@@ -146,7 +146,7 @@ class _JobDetailsPageState extends State<JobDetailsPage> {
                         style: TextStyle(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w600,
-                          color: AppColors.White,
+                          color: AppColors.white,
                         ),
                       ),
                     ),

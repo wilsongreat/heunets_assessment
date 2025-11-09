@@ -8,10 +8,10 @@ class JobInfoChip extends StatelessWidget {
   final String info;
 
   const JobInfoChip({
-    Key? key,
+    super.key,
      this.icon,
     required this.info,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

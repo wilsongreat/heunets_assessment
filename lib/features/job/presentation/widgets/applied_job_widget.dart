@@ -3,7 +3,7 @@ import 'package:flutter_hicons/flutter_hicons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/core/utils/gap.dart';
-import 'package:heunets_assessment_app/core/widgets/Container_wrapper.dart';
+import 'package:heunets_assessment_app/core/widgets/container_wrapper.dart';
 import 'package:heunets_assessment_app/features/job/data/model/job_application_model.dart';
 
 class AppliedJobWidget extends StatelessWidget {
@@ -29,7 +29,7 @@ class AppliedJobWidget extends StatelessWidget {
                 child: Text(
                   appliedJob.companyInitial,
                   style: TextStyle(
-                    color: AppColors.White,
+                    color: AppColors.white,
                     fontSize: 30,
                     fontWeight: FontWeight.w700,
                   ),
@@ -83,7 +83,7 @@ class AppliedJobWidget extends StatelessWidget {
                           child: Row(
                             children: [
                               Icon(Hicons.timeCircle1LightOutline),
-                              Text(appliedJob.statusText, style: TextStyle(color: AppColors.White),)
+                              Text(appliedJob.statusText, style: TextStyle(color: AppColors.white),)
                             ],
                           ),
                         )

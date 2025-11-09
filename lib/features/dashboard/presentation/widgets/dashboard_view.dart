@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heunets_assessment_app/core/resources/styles/app_colors.dart';
 import 'package:heunets_assessment_app/core/resources/styles/padding.dart';
 import 'package:heunets_assessment_app/features/dashboard/data/model/dashboard_model.dart';
@@ -8,11 +7,11 @@ import 'package:heunets_assessment_app/features/dashboard/data/model/dashboard_m
 
 class DashboardView extends StatefulWidget {
   const DashboardView({
-    Key? key,
+    super.key,
     this.selectedIndex = 0,
     required this.screens,
     required this.navigationBarItems,
-  }) : super(key: key);
+  });
 
   final int selectedIndex;
   final List<Widget> screens;
@@ -48,7 +47,7 @@ class _DashboardViewState extends State<DashboardView> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.White,
+        backgroundColor: AppColors.white,
         selectedFontSize: ScreenUtil().scaleWidth > 0 ? 10.sp : 10,
         unselectedFontSize: ScreenUtil().scaleWidth > 0 ? 10.sp : 10,
         selectedItemColor: AppColors.primaryColor,

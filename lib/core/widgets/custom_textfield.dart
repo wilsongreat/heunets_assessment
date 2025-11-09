@@ -25,7 +25,7 @@ class CustomTextField extends StatefulWidget {
   final double? height;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.label,
     this.iconData,
     this.hintText,
@@ -46,7 +46,7 @@ class CustomTextField extends StatefulWidget {
     this.borderColor,
     this.borderRadius,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
